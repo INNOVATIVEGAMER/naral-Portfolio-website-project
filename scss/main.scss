@@ -1,0 +1,565 @@
+//variables
+$website-width : 1280px;
+$main-color : #ffbc00;
+$light-color : #f4f4f4;
+$medium-color : #ccc;
+$dark-color : #333;
+$bg-img : url('../img/showcase.jpg');
+
+@import 'utilities';
+@import 'gallery_grid';
+
+//core styling
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Dosis',sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+a{
+  text-decoration: none;
+  color : $dark-color;
+}
+
+ul{
+  list-style: none;
+}
+
+h2,h3,h4{
+  text-transform: uppercase;
+}
+
+img{
+  width: 100%;
+}
+
+//logo
+#logo{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 0.3rem;
+}
+
+//main-nav
+#main-nav{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  ul{
+    display: flex;
+  }
+
+  li{
+    padding: 1rem 1.5rem;
+  }
+
+  a{
+    color: #fff;
+    border-bottom: 3px solid transparent;
+    padding-bottom: 0.5rem;
+    transition: border-color 0.25s;
+  
+    &:hover{
+        border-color: $medium-color;
+    }
+
+    &.current{
+      border-color: $main-color;
+    }
+  }
+
+}
+
+//header
+#header{
+  //header-home
+  &-home{
+      background: url('../img/showcase6.jpg') no-repeat center top /cover;
+      height: 100vh;
+      overflow: hidden;
+      
+      //header-content
+      .header-content
+      {
+          color: $light-color;
+          text-align: center;
+          padding-top: 20%;
+
+        h1
+        {
+        font-size: 4rem;
+        line-height: 1.2;
+        }
+
+        a
+        {
+          transition: background 0.5s ease-out;
+        }
+      }
+    }
+
+  //header-inner
+  &-inner{
+    background: url('../img/showcase7.jpg') no-repeat 20% 40.5% /cover;
+    border-bottom: 3px solid $main-color; 
+    height : 13rem;
+    background-size: 450px;
+    background-color: #bdc6e5;
+  }
+}
+
+#home
+{
+  &-a
+  {
+    .specials
+    {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-gap: 1rem;
+      
+      .fas
+      {
+        color: $main-color;
+        padding-bottom: 0.4rem;
+      }
+    }
+  }
+
+  &-b
+  {
+      .stats
+      {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+      
+        li
+        {
+          &.stats-title
+          {
+            font-size: 1.5rem;
+          }
+
+          &.stats-number
+          {
+            font-size: 2rem;
+            font-weight: bold;
+          }
+        }
+
+        div
+        {
+          padding: 3rem 0;
+
+          &:nth-child(odd)
+          {
+            background-color: $light-color;
+          }
+
+          &:nth-child(even)
+          {
+            background-color: $medium-color;
+          }
+        }
+      }
+  }
+
+  &-c
+  {
+    .process
+    {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-gap: 1.5rem;
+    
+      &-step
+      {
+        position : absolute;
+        top:0;
+        right:0;
+        font-size: 28px;
+        background-color: $main-color;
+        border-radius: 50%;
+        height: 15px;
+        width : 15px;
+        line-height: 15px;
+        padding: 1rem;
+        transition: all 1s;
+      }
+
+      &-icon
+      {
+        position: relative;
+        height: 70px;
+        width: 70px;
+        line-height: 70px;
+        padding: 2rem;
+        transition: all 1s;
+        border-radius: 50%;
+        background: $dark-color;
+        color: #fff;
+
+        &:hover
+        {
+          background-color: $main-color;
+          width: 90px;
+          height: 90px;
+          line-height: 90px;
+        
+          .process-step
+          {
+            background-color: $dark-color;
+          }
+        }
+      }
+    }  
+  }
+}
+
+#main-footer
+{
+  background: $dark-color;
+  color: #fff;
+  padding: 1rem 2rem;
+
+  .footer-content
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+  
+    a
+    {
+      color:#fff;
+      padding: 0.7rem;
+      padding-bottom: 0.6rem;
+      border: #fff 2px solid;
+      border-radius: 50%;
+      margin: 0 0.5rem;
+    
+      &:hover
+      {
+        background-color: $main-color;
+      }
+    }
+
+    i
+    {
+      font-size: 1.3rem;
+    }
+  }
+
+}
+
+//about
+#about
+{
+  &-a
+  {
+    .awards
+    {
+      display: grid;
+      grid-template-areas: 
+      'my-img description description'
+      'award-one award-two award-three';
+      grid-gap: 1.5rem;
+    }
+    .my-img
+    {
+      grid-area: my-img;
+      background: url('../img/showcase3.jpg') no-repeat center center /cover;
+      height:300px;
+      border-radius: 10px;
+      border: $dark-color 3px solid;
+    }
+    .description
+    {
+      grid-area : description;
+      padding: 0.5rem;
+      background-color: $light-color;
+      border-left: 3px solid $main-color;
+    }
+    .award-one
+    {
+      margin-top: 1rem;
+      grid-area : award-one;
+      .fas
+      {
+        color: $main-color;
+        margin-bottom: 0.5rem;
+      }
+    }
+    .award-two
+    {
+      margin-top: 1rem;
+      grid-area: award-two;
+      .fas
+      {
+        color: $main-color;
+        margin-bottom: 0.5rem;
+      }
+    }
+    .award-three
+    {
+      margin-top: 1rem;
+      grid-area: award-three;
+      .fas
+      {
+        color: $main-color;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &-b
+  {
+    h4
+    {
+      padding-left: 0.3rem;
+    }
+    .progress
+    {
+      overflow:hidden;
+      height:20px;
+      background-color: $medium-color;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress
+    {
+      .meter1
+      {
+        height: 100%;
+        animation: animate1 10s forwards 7s ease-in-out;
+      }
+
+      .meter2
+      {
+        height: 100%;
+        animation: animate2 10s forwards 7s ease-in-out;
+      }
+
+      .meter3
+      {
+        height: 100%;
+        animation: animate3 10s forwards 7s ease-in-out;
+      }
+
+      .meter4
+      {
+        height: 100%;
+        animation: animate4 10s forwards 7s ease-in-out;
+      }
+
+      .meter5
+      {
+        height: 100%;
+        animation: animate5 10s forwards 7s ease-in-out;
+      }
+
+      .meter6
+      {
+        height: 100%;
+        animation: animate6 10s forwards 7s ease-in-out;
+      }
+    }
+  }
+
+  &-c
+  {
+    .about-logos
+    {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-gap: 2rem;
+    
+      img
+      {
+        width: 70%;
+      }
+    }
+  }
+
+  &-d
+  {
+    .testimonials
+    {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-gap: 0.5rem;
+
+      ul
+      {
+        list-style: none;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      p
+      {
+        padding : 0.5rem;
+        border: 1px solid $medium-color;
+        border-radius: 0.4rem;
+      }
+
+      img
+      {
+        width : 50px;
+        height : 50px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+    }
+  }  
+}
+
+#contact
+{
+  &-a
+  {
+    .form-wrap
+    {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-gap : 1rem;
+
+      input,textarea
+      {
+        padding: 0.5rem 0.7rem;
+        border : 1px #222 solid;
+      }
+
+      textarea
+      {
+        grid-column: 1 /span 2;
+      }
+    }
+
+    button
+      {
+        margin-top: 2rem;
+        padding: 0.7rem 15rem;
+        transition: background 0.5s ease-out;
+
+        &:hover
+        {
+          background: $main-color;
+        }
+      }
+  }
+
+  &-b
+  {
+    .contact-info
+    {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-gap: 1rem;
+    }
+  }
+
+  &-c
+  {
+    .end-title
+    {
+      font-size: 4rem;
+    }
+  }
+}
+
+@keyframes animate1
+{
+  from
+  {
+    width : 0px;
+    background-color: $main-color;
+  }
+  to
+  {
+    width : 100%;
+    background-color: $main-color;
+  }
+}
+
+@keyframes animate2
+{
+  from
+  {
+    width : 0px;
+    background-color: $main-color;
+  }
+  to
+  {
+    width : 80%;
+    background-color: $main-color;
+  }
+}
+
+@keyframes animate3
+{
+  from
+  {
+    width : 0px;
+    background-color: $main-color;
+  }
+  to
+  {
+    width : 60%;
+    background-color: $main-color;
+  }
+}
+
+@keyframes animate4
+{
+  from
+  {
+    width : 0px;
+    background-color: $main-color;
+  }
+  to
+  {
+    width : 90%;
+    background-color: $main-color;
+  }
+}
+
+@keyframes animate5
+{
+  from
+  {
+    width : 0px;
+    background-color: $main-color;
+  }
+  to
+  {
+    width : 70%;
+    background-color: $main-color;
+  }
+}
+
+@keyframes animate6
+{
+  from
+  {
+    width : 0px;
+    background-color: $main-color;
+  }
+  to
+  {
+    width : 80%;
+    background-color: $main-color;
+  }
+}
+
+//media queries
+@import 'media';

@@ -1,0 +1,129 @@
+//variables
+$website-width : 1280px;
+$main-color : #ffbc00;
+$light-color : #f4f4f4;
+$medium-color : #ccc;
+$dark-color : #333;
+$bg-img : url('../img/showcase.jpg');
+
+//utilities
+.container{
+  max-width: $website-width;
+  padding: 0 1.5rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+.py{
+  &-1{
+    padding : 1rem 0;
+  }
+  &-2{
+    padding : 2rem 0;
+  }
+  &-3{
+    padding : 3rem 0;
+  }
+  &-4{
+    padding : 4rem 0;
+  }
+}
+
+.my{
+  &-1{
+    margin : 1rem 0;
+  }
+  &-2{
+    margin : 2rem 0;
+  }
+  &-3{
+    margin : 3rem 0;
+  }
+  &-4{
+    margin : 4rem 0;
+  }
+}
+
+.section-title
+{
+    font-size: 2rem;
+    display: block;
+    font-weight: 100;
+    padding-bottom: 0.5rem;
+}
+
+.border-line
+{
+    height : 3px;
+    width: 5rem;
+    background-color: $main-color;
+    margin : 0 auto 1rem auto;
+}
+
+.overlay-dark{
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  height : inherit;
+}
+
+.bg-dark
+{
+  background-color: $dark-color;
+  color: #fff;
+}
+
+.bg-light
+{
+  background-color: $light-color;
+  color: $dark-color;
+}
+
+.bg-main
+{
+  background-color: $main-color;
+  color: #fff;
+}
+
+%btn-shared{
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn{
+  
+  &-main{
+    @extend %btn-shared;
+    color: $dark-color;
+    background-color: $main-color;
+  }
+
+  &-light{
+    @extend %btn-shared;
+    color: $dark-color;
+    background-color: $light-color;
+  }
+
+  &-dark{
+    @extend %btn-shared;
+    color: $light-color;
+    background-color: $dark-color;
+  }
+}
+
+button[class^='btn-']:hover,
+a[class^='btn-']:hover,
+input[class^='btn-']:hover{
+  background-color: $main-color;
+}
+
+.lead{
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.text-center{
+  text-align: center;
+}
+
